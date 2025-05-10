@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Aggregator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      padding: 25px;
+      background-color: #f4f4f9;
+      color: #222;
+      font-size: 18px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+    }
+
+    .card {
+      border: none;
+      border-radius: 16px;
+      background-color: #ffffff;
+      color: #222;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+
+    .card-title a {
+      text-decoration: none;
+      color: #1a1a1a;
+    }
+
+    .card-title a:hover {
+      color: #3f51b5;
+    }
+
+    .badge {
+      background-color: #eeeeee;
+      border-radius: 5px;
+      font-size: 0.85rem;
+      color: #000;
+    }
+
+    .jumbotron {
+      border-radius: 16px;
+      padding: 2rem;
+      background: linear-gradient(to right, #8e44ad, #c0392b);
+    }
+
+    .btn-warning {
+      background-color: #ffb347;
+      border: none;
+      font-weight: bold;
+    }
+
+    .btn-warning:hover {
+      background-color: #ff9800;
+    }
+
+    /* === DARK MODE FIXES === */
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #e0e0e0 !important;
+    }
+
+    .dark-mode .card {
+      background-color: #1e1e1e !important;
+      color: #e0e0e0;
+    }
+
+    .dark-mode .card-title a {
+      color: #e0e0e0;
+    }
+
+    .dark-mode .card-title a:hover {
+      color: #90caf9;
+    }
+
+    .dark-mode .badge {
+      background-color: #333 !important;
+      color: #eee !important;
+    }
+
+    .dark-mode .btn,
+    .dark-mode .dropdown-menu {
+      background-color: #333 !important;
+      color: #fff !important;
+    }
+
+    .dark-mode .btn:hover {
+      background-color: #444 !important;
+    }
+
+    .dark-mode .jumbotron {
+      background: linear-gradient(to right, #4a148c, #880e4f) !important;
+    }
+  </style>
+</head>
+
+<body>
+  {% load social_share %}
+
+  <div class="container">
+    <div class="jumbotron text-center text-white">
+      <h1 class="display-2">News Aggregator</h1>
+      <div class="dropdown d-inline-block">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Load News
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="{% url 'scrape' name='india' %}">India</a></li>
+          <li><a class="dropdown-item" href="{% url 'scrape' name='business' %}">Business</a></li>
+          <li><a class="dropdown-item" href="{% url 'scrape' name='sports' %}">Sports</a></li>
+          <li><a class="dropdown-item" href="{% url 'scrape' name='politics' %}">Politics</a></li>
+          <li><a class="dropdown-item" href="{% url 'scrape' name='education' %}">Education</a></li>
+        </ul>
+      </div>
+      <button class="btn btn-warning btn-lg px-4 py-2 mt-4" onclick="toggleMode(this)">
+        🌙 Dark Mode
+      </button>
+    </div>
+
+    <div class="row mt-2 p-2">
+      {% for object in object_list %}
+      <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card mb-4">
+          <img class="card-img-top" src="{{ object.image }}"
+            onerror="this.onerror=null;this.src='https://via.placeholder.com/300x200?text=No+Image';" alt="news image" />
+          <div class="card-body">
+            <h5 class="card-title">
+              <a href="{{ object.url }}">{{ object.title|truncatechars:50 }}</a>
+            </h5>
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-between flex-wrap">
+              <button class="btn btn-secondary btn-sm mb-2" onclick="copyToClipboard('{{ object.url }}')">Copy</button>
+              <button class="btn btn-danger btn-sm mb-2" onclick="report('{{ object.url }}')">Report</button>
+              <span class="badge mb-2">{% post_to_facebook object.url "Facebook" %}</span>
+              <span class="badge mb-2">{% post_to_whatsapp object.url "Whatsapp" %}</span>
+              <span class="badge mb-2">{% post_to_telegram "New News: " object.url "Telegram" %}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    function toggleMode(button) {
+      const body = document.body;
+      const isDark = body.classList.toggle("dark-mode");
+      button.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    }
+
+    function copyToClipboard(text) {
+      const input = document.createElement("textarea");
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand("copy");
+      document.body.removeChild(input);
+      alert("Copied to clipboard: " + text);
+    }
+  </script>
+
+  <!-- Include Popper.js first, then Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
