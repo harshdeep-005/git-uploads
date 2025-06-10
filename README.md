@@ -16,16 +16,17 @@ Both of these technologies have their implementation in Python.
 ## Features
 
 Our news aggregator works in 3 steps:<br>
-1.It scrapes the news website for the articles.In this Django project, we are scraping a website 'www.theonion.com'<br>
-(We have scraped news articles from 'latest' section of 'www.theonion.com' for demonstration)<br>
+1.It scrapes the news website for the articles.In this Django project, we are scraping a website 'www.indianexpress.com'<br>
+(We have scraped news articles from 'latest' section of 'www.indianexpress.com' for demonstration)<br>
 2.Then it stores the article’s images, links, and title.<br>
 3.The stored objects in the database are served to the client. The client gets information in a nice template by clicking the 'Load news' button and select the different options available to you.The options are: India, Business, Sports, Politics, Education<br>
 
         ----------------------------------------------------------------------------------------
 ### Screenshots ###
 ## Latest
-![]([https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/latest_light_mode.PNG](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183724.png?raw=true))
-![]([https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/latest_night_mode.PNG](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183754.png?raw=true))
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183724.png?raw=true)
+## Dark Mode
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183754.png?raw=true)
 ## Different Types
 ![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183839.png?raw=true)
 ## India
