@@ -24,31 +24,24 @@ Our news aggregator works in 3 steps:<br>
         ----------------------------------------------------------------------------------------
 ### Screenshots ###
 ## Latest
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/latest_light_mode.PNG)
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/latest_night_mode.PNG)
-## Entertainment
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/entertainment_light_mode.PNG)
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/entertainment_night_mode.PNG)
+![]([https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/latest_light_mode.PNG](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183724.png?raw=true))
+![]([https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/latest_night_mode.PNG](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183754.png?raw=true))
+## Different Types
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183839.png?raw=true)
+## India
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20185710.png?raw=true)
 ## Sports
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/sports_light_mode.PNG)
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/sports_night_mode.PNG)
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20185727.png?raw=true)
 ## Politics
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/polititcs_light_mode.PNG)
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/polititcs_night_mode.PNG)
-## Breaking News
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/breaking_light_mode.PNG)
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/breaking_night_mode.PNG)
-## Opinion News
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/opinion_light_mode.PNG)
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/opinion_night_mode.PNG)
-## Facebook share
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/facebook_share.PNG)
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20185753.png?raw=true)
+## Education
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20185809.png?raw=true)
 ## Whatsapp share
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/whatsapp_share.PNG)
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183929.png?raw=true)
 ## Telegram share
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/telegram_share.PNG)
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20183948.png?raw=true)
 ## Copy to clipboard
-![](https://github.com/sam-boghara/News-Aggregator/blob/master/screenshots/copy_to_clipboard.PNG)
+![](https://github.com/harshdeep-005/git-uploads/blob/main/Screenshot%202025-06-10%20184029.png?raw=true)
 ---------------------------------------------------------------------------------------
 
 ## How To Use
