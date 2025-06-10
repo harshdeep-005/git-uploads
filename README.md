@@ -19,7 +19,7 @@ Our news aggregator works in 3 steps:<br>
 1.It scrapes the news website for the articles.In this Django project, we are scraping a website 'www.theonion.com'<br>
 (We have scraped news articles from 'latest' section of 'www.theonion.com' for demonstration)<br>
 2.Then it stores the article’s images, links, and title.<br>
-3.The stored objects in the database are served to the client. The client gets information in a nice template by clicking the 'Load news' button and select the different options available to you.The options are: Latest,Entertainment,Sports,Politics,Opinion,Breaking-News<br>
+3.The stored objects in the database are served to the client. The client gets information in a nice template by clicking the 'Load news' button and select the different options available to you.The options are: India, Business, Sports, Politics, Education<br>
 
         ----------------------------------------------------------------------------------------
 ### Screenshots ###
@@ -55,10 +55,16 @@ Our news aggregator works in 3 steps:<br>
 
 #### Software Requirements
 
-Python3
+Python3, Django
 
 #### Installation
+Step 1 : Run cmd as adminstrator
 
+Step 2 : Change the path.
+
+Step 3 : Create a virtual Environment
+
+Step 4 : Run "pip install -r requirements.txt"
 Install the dependencies by running:
 ```html  
     pip install bs4
@@ -67,13 +73,13 @@ Install the dependencies by running:
 ```
 
 #### Run using Command Prompt
-
+Step 5 : RUn "python manage.py runserver"
 Navigate to the News-Aggregator folder which has manage.py file then run the following command on cmd
 
 ```html
 python manage.py runserver
 ```
-
+Step 6 : open the server through link
 ### Tech stack
 
 `Backend` : Python3,Beautiful soup <br>
